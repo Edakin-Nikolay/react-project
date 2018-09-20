@@ -1,25 +1,8 @@
-import _ from 'lodash';
-import './style.css';
-import Icon from './cat.png';
-import printMe from './print';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-function component() {
-    let element = document.createElement('div');
-    let btn = document.createElement('button');
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-
-    let myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
-
-    btn.innerHTML = 'click!';
-    btn.onclick = printMe;
-    element.appendChild(btn);
-
-    return element;
-}
-
-document.body.appendChild(component());
+ReactDOM.render(<div> Hello, Webpak, babel and React!</div>,
+    document.getElementById('root'));
 

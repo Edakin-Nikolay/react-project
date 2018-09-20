@@ -15,7 +15,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Hot module replacement'
+            title: 'Webpack+babel+Reqct=love',
+            template: path.join(__dirname, 'public', 'index.html')
         })
     ],
     output: {
@@ -24,6 +25,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                }
+            },
             {
                 test: /\.css$/,
                 use: [
